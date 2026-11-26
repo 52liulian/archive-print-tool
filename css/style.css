@@ -4,6 +4,7 @@
 
 /* ------------------------------ 公文字体（fonts 目录内置，均为免费可商用开源字体） ------------------------------
  * 思源宋体（Source Han Serif）—— SIL Open Font License 1.1
+ * 思源黑体（Source Han Sans）—— SIL Open Font License 1.1
  * 朱雀仿宋（Zhuque Fangsong）—— SIL Open Font License 1.1
  * 霞鹜文楷（LXGW WenKai）    —— SIL Open Font License 1.1
  */
@@ -25,6 +26,11 @@
 @font-face {
   font-family: "霞鹜文楷";
   src: url("../fonts/lxgw_wenkai.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "思源黑体";
+  src: url("../fonts/sourcehan_sans.otf") format("opentype");
   font-display: swap;
 }
 
