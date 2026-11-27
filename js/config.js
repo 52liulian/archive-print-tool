@@ -4,8 +4,8 @@
  * 默认坐标依据 A4 扫描底图实测（1075 × 1520 像素 → 210 × 297 毫米）换算得出。
  * 坐标单位统一为毫米（mm），精度 0.1mm；x/y 为字段框左上角，w/h 为宽高。
  * 字号单位为磅（pt）。默认字体遵循公文规范（均使用免费可商用开源字体）：
- * 单位名称/类别/案卷题名用思源宋体 Heavy 20pt（替代方正小标宋），文字类字段用朱雀仿宋 14pt（替代仿宋_GB2312），
- * 数字类字段（起止年月日/件数/页数/保管期限/全宗号/目录号/案卷号）默认思源黑体 14pt。
+ * 单位名称/类别/案卷题名用思源宋体 Heavy 20pt（替代方正小标宋），其余字段（含卷内摘要、封底文字及
+ * 数字类字段：起止年月日/件数/页数/保管期限/全宗号/目录号/案卷号）统一默认朱雀仿宋 14pt（替代仿宋_GB2312）。
  */
 (function (global) {
   'use strict';
@@ -18,18 +18,18 @@
     { id: 'category',    label: '类别',       type: 'text',     x: 59,  y: 58.5, w: 130, h: 13,  fontFamily: '思源宋体 Heavy', fontSize: 20, align: 'center', visible: true },
     { id: 'title',       label: '案卷题名',   type: 'text',     x: 59,  y: 78.5, w: 130, h: 13,  fontFamily: '思源宋体 Heavy', fontSize: 20, align: 'center', visible: true },
     { id: 'summary',     label: '卷内摘要',   type: 'textarea', x: 60,  y: 97,   w: 128, h: 130, fontFamily: '朱雀仿宋', fontSize: 14, align: 'left',   visible: true },
-    { id: 'startYear',   label: '起年',       type: 'text',     x: 74,  y: 231,  w: 10,   h: 7,   fontFamily: '思源黑体', fontSize: 14, align: 'center', visible: true },
-    { id: 'startMonth',  label: '起月',       type: 'text',     x: 89,  y: 231,  w: 8,   h: 7,   fontFamily: '思源黑体', fontSize: 14, align: 'center', visible: true },
-    { id: 'startDay',    label: '日起',       type: 'text',     x: 103, y: 231,  w: 7,   h: 7,   fontFamily: '思源黑体', fontSize: 14, align: 'center', visible: true },
-    { id: 'endYear',     label: '止年',       type: 'text',     x: 126, y: 231,  w: 10,   h: 7,   fontFamily: '思源黑体', fontSize: 14, align: 'center', visible: true },
-    { id: 'endMonth',    label: '止月',       type: 'text',     x: 141, y: 231,  w: 8,   h: 7,   fontFamily: '思源黑体', fontSize: 14, align: 'center', visible: true },
-    { id: 'endDay',      label: '日止',       type: 'text',     x: 154, y: 231,  w: 7,   h: 7,   fontFamily: '思源黑体', fontSize: 14, align: 'center', visible: true },
-    { id: 'pieceCount',  label: '件数',       type: 'text',     x: 89,  y: 241,  w: 9,   h: 7,   fontFamily: '思源黑体', fontSize: 14, align: 'center', visible: true },
-    { id: 'pageCount',   label: '页数',       type: 'text',     x: 104, y: 241,  w: 9,   h: 7,   fontFamily: '思源黑体', fontSize: 14, align: 'center', visible: true },
-    { id: 'retainPeriod',label: '保管期限',   type: 'text',     x: 166, y: 241,  w: 24,  h: 7,   fontFamily: '思源黑体', fontSize: 14, align: 'center', visible: true },
-    { id: 'archiveNo',   label: '全宗号',     type: 'text',     x: 58,  y: 251,  w: 27,  h: 7,   fontFamily: '思源黑体', fontSize: 14, align: 'center', visible: true },
-    { id: 'catalogNo',   label: '目录号',     type: 'text',     x: 106, y: 251,  w: 28,  h: 7,   fontFamily: '思源黑体', fontSize: 14, align: 'center', visible: true },
-    { id: 'fileNo',      label: '案卷号',     type: 'text',     x: 166, y: 251,  w: 24,  h: 7,   fontFamily: '思源黑体', fontSize: 12, align: 'center', visible: true }
+    { id: 'startYear',   label: '起年',       type: 'text',     x: 74,  y: 231,  w: 10,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
+    { id: 'startMonth',  label: '起月',       type: 'text',     x: 89,  y: 231,  w: 8,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
+    { id: 'startDay',    label: '日起',       type: 'text',     x: 103, y: 231,  w: 7,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
+    { id: 'endYear',     label: '止年',       type: 'text',     x: 126, y: 231,  w: 10,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
+    { id: 'endMonth',    label: '止月',       type: 'text',     x: 141, y: 231,  w: 8,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
+    { id: 'endDay',      label: '日止',       type: 'text',     x: 154, y: 231,  w: 7,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
+    { id: 'pieceCount',  label: '件数',       type: 'text',     x: 89,  y: 241,  w: 9,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
+    { id: 'pageCount',   label: '页数',       type: 'text',     x: 104, y: 241,  w: 9,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
+    { id: 'retainPeriod',label: '保管期限',   type: 'text',     x: 166, y: 241,  w: 24,  h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
+    { id: 'archiveNo',   label: '全宗号',     type: 'text',     x: 58,  y: 251,  w: 27,  h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
+    { id: 'catalogNo',   label: '目录号',     type: 'text',     x: 106, y: 251,  w: 28,  h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
+    { id: 'fileNo',      label: '案卷号',     type: 'text',     x: 166, y: 251,  w: 24,  h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true }
   ];
 
   /** 封底（第 2 页，卷内备查表）字段定义。 */
@@ -70,7 +70,7 @@
   };
 
   /** 当前布局版本。仅当缓存版本低于此值时执行迁移。 */
-  var LAYOUT_VERSION = 5;
+  var LAYOUT_VERSION = 6;
 
   /**
    * 布局迁移表：props 中每个属性独立判断——仅当缓存值仍等于旧值（用户未手动调整该属性）时更新为新值。
@@ -79,6 +79,8 @@
    * v4：公文字体规范——标题三行改小标宋风格 20pt，其余改仿宋风格 14pt（fontFamily 为新增属性，
    *     由 mergeLayout 自动补默认值，无需迁移；此处仅迁移 fontSize 旧默认值）。
    * v5：数字类字段（起止年月日/件数/页数/保管期限/全宗号/目录号/案卷号）默认字体改思源黑体。
+   * v6：数字类字段默认字体改回朱雀仿宋 14pt（原仿宋_GB2312 的开源替代；仅回退 v5 升级时
+   *     仍等于旧默认"思源黑体"的缓存值，不动用户手动改过的字体）。
    */
   var LAYOUT_MIGRATIONS = [
     { version: 2, tab: 'back', id: 'filer',    props: { y: [228, 222.8], w: [40, 53] } },
@@ -134,7 +136,21 @@
     { version: 5, tab: 'cover', id: 'retainPeriod', props: { fontFamily: ['朱雀仿宋', '思源黑体'] } },
     { version: 5, tab: 'cover', id: 'archiveNo',    props: { fontFamily: ['朱雀仿宋', '思源黑体'] } },
     { version: 5, tab: 'cover', id: 'catalogNo',    props: { fontFamily: ['朱雀仿宋', '思源黑体'] } },
-    { version: 5, tab: 'cover', id: 'fileNo',       props: { fontFamily: ['朱雀仿宋', '思源黑体'] } }
+    { version: 5, tab: 'cover', id: 'fileNo',       props: { fontFamily: ['朱雀仿宋', '思源黑体'] } },
+    // v6：数字类字段默认字体改回朱雀仿宋 14pt（原仿宋_GB2312 的开源替代；仅当缓存值仍为 v5 旧默认
+    // "思源黑体"时回退，不动用户手动改过的字体。其他字体如霞鹜文楷等说明用户手动选择过，一并保留）
+    { version: 6, tab: 'cover', id: 'startYear',    props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    { version: 6, tab: 'cover', id: 'startMonth',   props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    { version: 6, tab: 'cover', id: 'startDay',     props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    { version: 6, tab: 'cover', id: 'endYear',      props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    { version: 6, tab: 'cover', id: 'endMonth',     props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    { version: 6, tab: 'cover', id: 'endDay',       props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    { version: 6, tab: 'cover', id: 'pieceCount',   props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    { version: 6, tab: 'cover', id: 'pageCount',    props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    { version: 6, tab: 'cover', id: 'retainPeriod', props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    { version: 6, tab: 'cover', id: 'archiveNo',    props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    { version: 6, tab: 'cover', id: 'catalogNo',    props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    { version: 6, tab: 'cover', id: 'fileNo',       props: { fontFamily: ['思源黑体', '朱雀仿宋'] } }
   ];
 
   /** 生成全新的默认布局对象（深拷贝，避免共享引用）。 */

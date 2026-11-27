@@ -31,11 +31,11 @@
 | --- | --- | --- | --- |
 | sourcehan_heavy.otf | 思源宋体 Heavy | 标题（替代方正小标宋） | SIL OFL 1.1（Adobe/Google） |
 | sourcehan_bold.otf | 思源宋体 Bold | 标题备选（替代方正大标宋） | SIL OFL 1.1（Adobe/Google） |
-| sourcehan_sans.otf | 思源黑体 | 数字（替代系统黑体） | SIL OFL 1.1（Adobe/Google） |
+| sourcehan_sans.otf | 思源黑体 | 备选黑体（可选） | SIL OFL 1.1（Adobe/Google） |
 | zhuque_fangsong.ttf | 朱雀仿宋 | 正文（替代仿宋_GB2312） | SIL OFL 1.1（TrionesType） |
 | lxgw_wenkai.ttf | 霞鹜文楷 | 楷体风格（替代楷体_GB2312） | SIL OFL 1.1（lxgw） |
 
-**默认字体规范**：单位名称、类别、案卷题名用**思源宋体 Heavy 20pt**；起止年月日、件数、页数、保管期限、全宗号、目录号、案卷号等数字类字段用**思源黑体 14pt**；其余文字字段（卷内摘要、封底说明、立卷人等）用**朱雀仿宋 14pt**。
+**默认字体规范**：单位名称、类别、案卷题名用**思源宋体 Heavy 20pt**；其余字段（含起止年月日、件数、页数、保管期限、全宗号、目录号、案卷号等数字类字段，以及卷内摘要、封底说明、立卷人等文字字段）统一用**朱雀仿宋 14pt**。
 
 > 注：旧版本内置的方正小标宋/仿宋_GB2312 等字体商业使用需授权，已全部移除并替换为上述开源字体。已保存的旧配置会自动回退到新默认字体。
 
