@@ -2,11 +2,13 @@
  * 打印定位核心：@page A4 无边距 + 页面/字段一律使用 mm 绝对定位。
  */
 
-/* ------------------------------ 公文字体（fonts 目录内置，均为免费可商用开源字体） ------------------------------
+/* ------------------------------ 内置公文字体（fonts 目录内置：开源字体 + 用户自备的传统公文字体） ------------------------------
  * 思源宋体（Source Han Serif）—— SIL Open Font License 1.1
  * 思源黑体（Source Han Sans）—— SIL Open Font License 1.1
  * 朱雀仿宋（Zhuque Fangsong）—— SIL Open Font License 1.1
  * 霞鹜文楷（LXGW WenKai）    —— SIL Open Font License 1.1
+ * 仿宋_GB2312 / 方正小标宋简体 / 方正大标宋简体 / 楷体_GB2312 —— 传统公文字体，商业使用需自行确认授权
+ * 注：字体文件名使用 ASCII（历史上中文路径在 file:// 下加载失败踩过坑）。
  */
 @font-face {
   font-family: "朱雀仿宋";
@@ -31,6 +33,26 @@
 @font-face {
   font-family: "思源黑体";
   src: url("../fonts/sourcehan_sans.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "仿宋_GB2312";
+  src: url("../fonts/fangsong_gb2312.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "方正小标宋简体";
+  src: url("../fonts/fzxiaobiaosong.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "方正大标宋简体";
+  src: url("../fonts/fzdabiaosong.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "楷体_GB2312";
+  src: url("../fonts/kaiti_gb2312.ttf") format("truetype");
   font-display: swap;
 }
 

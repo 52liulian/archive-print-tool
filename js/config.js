@@ -4,8 +4,9 @@
  * 默认坐标依据 A4 扫描底图实测（1075 × 1520 像素 → 210 × 297 毫米）换算得出。
  * 坐标单位统一为毫米（mm），精度 0.1mm；x/y 为字段框左上角，w/h 为宽高。
  * 字号单位为磅（pt）。默认字体遵循公文规范（均使用免费可商用开源字体）：
- * 单位名称/类别/案卷题名用思源宋体 Heavy 20pt（替代方正小标宋），其余字段（含卷内摘要、封底文字及
- * 数字类字段：起止年月日/件数/页数/保管期限/全宗号/目录号/案卷号）统一默认朱雀仿宋 14pt（替代仿宋_GB2312）。
+ * 单位名称/类别/案卷题名用思源宋体 Heavy 20pt（替代方正小标宋的免费开源方案，亦可在下拉框选方正小标宋简体），
+ * 数字类字段（起止年月日/件数/页数/保管期限/全宗号/目录号/案卷号）默认仿宋_GB2312 14pt（用户自备的传统公文字体），
+ * 其余文字字段（卷内摘要、封底文字）用朱雀仿宋 14pt（替代仿宋_GB2312 的开源方案）。
  */
 (function (global) {
   'use strict';
@@ -18,18 +19,18 @@
     { id: 'category',    label: '类别',       type: 'text',     x: 59,  y: 58.5, w: 130, h: 13,  fontFamily: '思源宋体 Heavy', fontSize: 20, align: 'center', visible: true },
     { id: 'title',       label: '案卷题名',   type: 'text',     x: 59,  y: 78.5, w: 130, h: 13,  fontFamily: '思源宋体 Heavy', fontSize: 20, align: 'center', visible: true },
     { id: 'summary',     label: '卷内摘要',   type: 'textarea', x: 60,  y: 97,   w: 128, h: 130, fontFamily: '朱雀仿宋', fontSize: 14, align: 'left',   visible: true },
-    { id: 'startYear',   label: '起年',       type: 'text',     x: 74,  y: 231,  w: 10,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
-    { id: 'startMonth',  label: '起月',       type: 'text',     x: 89,  y: 231,  w: 8,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
-    { id: 'startDay',    label: '日起',       type: 'text',     x: 103, y: 231,  w: 7,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
-    { id: 'endYear',     label: '止年',       type: 'text',     x: 126, y: 231,  w: 10,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
-    { id: 'endMonth',    label: '止月',       type: 'text',     x: 141, y: 231,  w: 8,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
-    { id: 'endDay',      label: '日止',       type: 'text',     x: 154, y: 231,  w: 7,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
-    { id: 'pieceCount',  label: '件数',       type: 'text',     x: 89,  y: 241,  w: 9,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
-    { id: 'pageCount',   label: '页数',       type: 'text',     x: 104, y: 241,  w: 9,   h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
-    { id: 'retainPeriod',label: '保管期限',   type: 'text',     x: 166, y: 241,  w: 24,  h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
-    { id: 'archiveNo',   label: '全宗号',     type: 'text',     x: 58,  y: 251,  w: 27,  h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
-    { id: 'catalogNo',   label: '目录号',     type: 'text',     x: 106, y: 251,  w: 28,  h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true },
-    { id: 'fileNo',      label: '案卷号',     type: 'text',     x: 166, y: 251,  w: 24,  h: 7,   fontFamily: '朱雀仿宋', fontSize: 14, align: 'center', visible: true }
+    { id: 'startYear',   label: '起年',       type: 'text',     x: 74,  y: 231,  w: 10,   h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true },
+    { id: 'startMonth',  label: '起月',       type: 'text',     x: 89,  y: 231,  w: 8,   h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true },
+    { id: 'startDay',    label: '日起',       type: 'text',     x: 103, y: 231,  w: 7,   h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true },
+    { id: 'endYear',     label: '止年',       type: 'text',     x: 126, y: 231,  w: 10,   h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true },
+    { id: 'endMonth',    label: '止月',       type: 'text',     x: 141, y: 231,  w: 8,   h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true },
+    { id: 'endDay',      label: '日止',       type: 'text',     x: 154, y: 231,  w: 7,   h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true },
+    { id: 'pieceCount',  label: '件数',       type: 'text',     x: 89,  y: 241,  w: 9,   h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true },
+    { id: 'pageCount',   label: '页数',       type: 'text',     x: 104, y: 241,  w: 9,   h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true },
+    { id: 'retainPeriod',label: '保管期限',   type: 'text',     x: 166, y: 241,  w: 24,  h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true },
+    { id: 'archiveNo',   label: '全宗号',     type: 'text',     x: 58,  y: 251,  w: 27,  h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true },
+    { id: 'catalogNo',   label: '目录号',     type: 'text',     x: 106, y: 251,  w: 28,  h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true },
+    { id: 'fileNo',      label: '案卷号',     type: 'text',     x: 166, y: 251,  w: 24,  h: 7,   fontFamily: '仿宋_GB2312', fontSize: 14, align: 'center', visible: true }
   ];
 
   /** 封底（第 2 页，卷内备查表）字段定义。 */
@@ -48,15 +49,21 @@
   var TABS = ['cover', 'back'];
 
   /**
-   * 可选字体列表（fonts 目录内置 @font-face，无需系统安装；均为免费可商用开源字体）。
+   * 可选字体列表（fonts 目录内置 @font-face，无需系统安装；无需联网）。
+   * 开源字体均为免费可商用；仿宋_GB2312 / 方正小标宋简体 / 方正大标宋简体 / 楷体_GB2312
+   * 为传统公文字体，商业使用需用户自行确认授权。
    * name 为 CSS font-family 名，同时也是下拉框显示文字。
-   * 宋体/黑体依赖操作系统自带字体，不随本工具分发。
+   * 宋体依赖操作系统自带字体，不随本工具分发。
    */
   var FONT_OPTIONS = [
+    { name: '仿宋_GB2312' },
     { name: '朱雀仿宋' },
     { name: '思源宋体 Heavy' },
     { name: '思源宋体 Bold' },
     { name: '思源黑体' },
+    { name: '方正小标宋简体' },
+    { name: '方正大标宋简体' },
+    { name: '楷体_GB2312' },
     { name: '霞鹜文楷' },
     { name: '宋体' }
   ];
@@ -70,7 +77,7 @@
   };
 
   /** 当前布局版本。仅当缓存版本低于此值时执行迁移。 */
-  var LAYOUT_VERSION = 6;
+  var LAYOUT_VERSION = 7;
 
   /**
    * 布局迁移表：props 中每个属性独立判断——仅当缓存值仍等于旧值（用户未手动调整该属性）时更新为新值。
@@ -81,6 +88,9 @@
    * v5：数字类字段（起止年月日/件数/页数/保管期限/全宗号/目录号/案卷号）默认字体改思源黑体。
    * v6：数字类字段默认字体改回朱雀仿宋 14pt（原仿宋_GB2312 的开源替代；仅回退 v5 升级时
    *     仍等于旧默认"思源黑体"的缓存值，不动用户手动改过的字体）。
+   * v7：数字类字段默认字体改回仿宋_GB2312 14pt（用户自备的传统公文字体；仅回退 v6 升级时
+   *     仍等于旧默认"朱雀仿宋"的缓存值，不动用户手动改过的字体。与 v5→v6 链式执行后，
+   *     v5 旧缓存"思源黑体"会经 v6→v7 最终落到仿宋_GB2312）。
    */
   var LAYOUT_MIGRATIONS = [
     { version: 2, tab: 'back', id: 'filer',    props: { y: [228, 222.8], w: [40, 53] } },
@@ -150,7 +160,21 @@
     { version: 6, tab: 'cover', id: 'retainPeriod', props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
     { version: 6, tab: 'cover', id: 'archiveNo',    props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
     { version: 6, tab: 'cover', id: 'catalogNo',    props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
-    { version: 6, tab: 'cover', id: 'fileNo',       props: { fontFamily: ['思源黑体', '朱雀仿宋'] } }
+    { version: 6, tab: 'cover', id: 'fileNo',       props: { fontFamily: ['思源黑体', '朱雀仿宋'] } },
+    // v7：数字类字段默认字体改回仿宋_GB2312 14pt（用户自备的传统公文字体；仅当缓存值仍为 v6 旧默认
+    // "朱雀仿宋"时回退，不动用户手动改过的字体。v5/v6/v7 链式执行后，最早 v5 旧缓存"思源黑体"亦最终落到仿宋_GB2312）
+    { version: 7, tab: 'cover', id: 'startYear',    props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } },
+    { version: 7, tab: 'cover', id: 'startMonth',   props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } },
+    { version: 7, tab: 'cover', id: 'startDay',     props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } },
+    { version: 7, tab: 'cover', id: 'endYear',      props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } },
+    { version: 7, tab: 'cover', id: 'endMonth',     props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } },
+    { version: 7, tab: 'cover', id: 'endDay',       props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } },
+    { version: 7, tab: 'cover', id: 'pieceCount',   props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } },
+    { version: 7, tab: 'cover', id: 'pageCount',    props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } },
+    { version: 7, tab: 'cover', id: 'retainPeriod', props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } },
+    { version: 7, tab: 'cover', id: 'archiveNo',    props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } },
+    { version: 7, tab: 'cover', id: 'catalogNo',    props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } },
+    { version: 7, tab: 'cover', id: 'fileNo',       props: { fontFamily: ['朱雀仿宋', '仿宋_GB2312'] } }
   ];
 
   /** 生成全新的默认布局对象（深拷贝，避免共享引用）。 */
